@@ -3,8 +3,8 @@
  */
 package com.cloud.clientservice.queue;
 
-import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -12,11 +12,11 @@ import org.apache.commons.lang3.StringUtils;
 
 class ShareDataSource{
     private volatile boolean flag = true;// 默认开启，进行生产 + 消费  volatile保证线程间可见性
-    private AtomicInteger atomicInteger = new AtomicInteger(10);
+    private AtomicInteger atomicInteger = new AtomicInteger();
 
     BlockingQueue<String> blockingQueue = null;
 
-    public ShareDataSource(BlockingQueue<String> blockingQueue){
+    public ShareDataSource(BlockingQueue<String> blockingQueue){ // 用BlockingQueue作为参数是为了更好的扩展性，这种思想要注意
         this.blockingQueue = blockingQueue;
         System.out.println(blockingQueue.getClass().getName());
     }
@@ -69,7 +69,8 @@ class ShareDataSource{
 public class ProdConsumer_BlockingQueueDemo {
 
     public static void main(String[] args) {
-        ShareDataSource shareDataSource = new ShareDataSource(new ArrayBlockingQueue<>(10));
+//        ShareDataSource shareDataSource = new ShareDataSource(new ArrayBlockingQueue<>(10));
+        ShareDataSource shareDataSource = new ShareDataSource(new LinkedBlockingDeque<>(10));
 
         new Thread(() ->{
             try {

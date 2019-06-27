@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 public class SemaphoreDemo {
 
     public static void main(String[] args) {
-        Semaphore semaphore = new Semaphore(3);
+        Semaphore semaphore = new Semaphore(3);//信号量主要用于两个目的，一个是用于多个共享资源的互斥使用，另一个用于并发线程数的控制。
 
         for (int i = 0; i < 6; i++) { // 模拟6部汽车
             new Thread(() -> {
