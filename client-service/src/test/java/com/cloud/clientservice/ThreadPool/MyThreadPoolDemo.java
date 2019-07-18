@@ -20,7 +20,7 @@ public class MyThreadPoolDemo {
 
 
 //        testJDKThreadPool();
-        testMyThreadPool();
+//        testMyThreadPool();
     }
     static void testMyThreadPool(){
         ExecutorService threadPool = new ThreadPoolExecutor(

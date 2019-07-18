@@ -511,8 +511,22 @@ public class MyTest {
 //
 //    }
     @Test
-    public void testPageHelper(){
+    public void testListToString(){
+        List<Short> stringCollection = new ArrayList<>();
+        stringCollection.add((short) 4);
+        stringCollection.add((short) 4);
+        stringCollection.add((short) 4); stringCollection.add((short) 4);
 
+        String listString = stringCollection.toString().substring(1,stringCollection.toString().length()-1);
+        System.out.println(listString);
+//        stringCollection.add("aaa2");
+//        stringCollection.add("bbb1");
+//        stringCollection.add("aaa1");
+//        stringCollection.add("bbb3");
+//        stringCollection.add("ccc");
+//        stringCollection.add("bbb2");
+//        stringCollection.add("ddd1");
+        System.out.println(stringCollection);
 
     }
 
