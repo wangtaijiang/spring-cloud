@@ -19,6 +19,7 @@ import com.alibaba.excel.metadata.Table;
 import com.alibaba.excel.support.ExcelTypeEnum;
 import com.cloud.clientservice.easyexceltest.listen.AfterWriteHandlerImpl;
 import com.cloud.clientservice.easyexceltest.model.WriteModel;
+import com.cloud.clientservice.easyexceltest.util.DataUtil;
 import com.cloud.clientservice.easyexceltest.util.FileUtil;
 
 /**
@@ -38,16 +39,16 @@ public class EasyExcelWriteTest2 {
         Map columnWidth = new HashMap();
         columnWidth.put(0,10000);columnWidth.put(1,40000);columnWidth.put(2,10000);columnWidth.put(3,10000);
         sheet1.setColumnWidthMap(columnWidth);
-        sheet1.setHead(createTestListStringHead());
+        sheet1.setHead(DataUtil.createTestListStringHead());
         //or 设置自适应宽度
         //sheet1.setAutoWidth(Boolean.TRUE);
-        writer.write1(createTestListObject(), sheet1);
+        writer.write1(DataUtil.createTestListObject(), sheet1);
 
         //写第二个sheet sheet2  模型上打有表头的注解，合并单元格
         Sheet sheet2 = new Sheet(2, 3, WriteModel.class, "第二个sheet", null);
-        sheet2.setTableStyle(createTableStyle());
+        sheet2.setTableStyle(DataUtil.createTableStyle());
         //writer.write1(null, sheet2);
-        writer.write(createTestListJavaMode(), sheet2);
+        writer.write(DataUtil.createTestListJavaMode(), sheet2);
         //需要合并单元格
         writer.merge(5,20,1,1);
 
@@ -55,14 +56,14 @@ public class EasyExcelWriteTest2 {
         Sheet sheet3 = new Sheet(3, 0);
         sheet3.setSheetName("第三个sheet");
         Table table1 = new Table(1);
-        table1.setHead(createTestListStringHead());
-        writer.write1(createTestListObject(), sheet3, table1);
+        table1.setHead(DataUtil.createTestListStringHead());
+        writer.write1(DataUtil.createTestListObject(), sheet3, table1);
 
         //写sheet2  模型上打有表头的注解
         Table table2 = new Table(2);
-        table2.setTableStyle(createTableStyle());
+        table2.setTableStyle(DataUtil.createTableStyle());
         table2.setClazz(WriteModel.class);
-        writer.write(createTestListJavaMode(), sheet3, table2);
+        writer.write(DataUtil.createTestListJavaMode(), sheet3, table2);
 
         writer.finish();
         out.close();
@@ -84,30 +85,30 @@ public class EasyExcelWriteTest2 {
         Map columnWidth = new HashMap();
         columnWidth.put(0,10000);columnWidth.put(1,40000);columnWidth.put(2,10000);columnWidth.put(3,10000);
         sheet1.setColumnWidthMap(columnWidth);
-        sheet1.setHead(createTestListStringHead());
+        sheet1.setHead(DataUtil.createTestListStringHead());
         //or 设置自适应宽度
         //sheet1.setAutoWidth(Boolean.TRUE);
-        writer.write1(createTestListObject(), sheet1);
+        writer.write1(DataUtil.createTestListObject(), sheet1);
 
         //写第二个sheet sheet2  模型上打有表头的注解，合并单元格
         Sheet sheet2 = new Sheet(2, 3, WriteModel.class, "第二个sheet", null);
-        sheet2.setTableStyle(createTableStyle());
+        sheet2.setTableStyle(DataUtil.createTableStyle());
         sheet2.setStartRow(20);
-        writer.write(createTestListJavaMode(), sheet2);
+        writer.write(DataUtil.createTestListJavaMode(), sheet2);
 
         //写第三个sheet包含多个table情况
         Sheet sheet3 = new Sheet(3, 0);
         sheet3.setSheetName("第三个sheet");
         sheet3.setStartRow(30);
         Table table1 = new Table(1);
-        table1.setHead(createTestListStringHead());
-        writer.write1(createTestListObject(), sheet3, table1);
+        table1.setHead(DataUtil.createTestListStringHead());
+        writer.write1(DataUtil.createTestListObject(), sheet3, table1);
 
         //写sheet2  模型上打有表头的注解
         Table table2 = new Table(2);
-        table2.setTableStyle(createTableStyle());
+        table2.setTableStyle(DataUtil.createTableStyle());
         table2.setClazz(WriteModel.class);
-        writer.write(createTestListJavaMode(), sheet3, table2);
+        writer.write(DataUtil.createTestListJavaMode(), sheet3, table2);
 
         writer.finish();
         out.close();
@@ -129,30 +130,30 @@ public class EasyExcelWriteTest2 {
         Map columnWidth = new HashMap();
         columnWidth.put(0,10000);columnWidth.put(1,40000);columnWidth.put(2,10000);columnWidth.put(3,10000);
         sheet1.setColumnWidthMap(columnWidth);
-        sheet1.setHead(createTestListStringHead());
+        sheet1.setHead(DataUtil.createTestListStringHead());
         //or 设置自适应宽度
         //sheet1.setAutoWidth(Boolean.TRUE);
-        writer.write1(createTestListObject(), sheet1);
+        writer.write1(DataUtil.createTestListObject(), sheet1);
 
         //写第二个sheet sheet2  模型上打有表头的注解，合并单元格
         Sheet sheet2 = new Sheet(2, 3, WriteModel.class, "第二个sheet", null);
-        sheet2.setTableStyle(createTableStyle());
+        sheet2.setTableStyle(DataUtil.createTableStyle());
         sheet2.setStartRow(20);
-        writer.write(createTestListJavaMode(), sheet2);
+        writer.write(DataUtil.createTestListJavaMode(), sheet2);
 
         //写第三个sheet包含多个table情况
         Sheet sheet3 = new Sheet(3, 0);
         sheet3.setSheetName("第三个sheet");
         sheet3.setStartRow(30);
         Table table1 = new Table(1);
-        table1.setHead(createTestListStringHead());
-        writer.write1(createTestListObject(), sheet3, table1);
+        table1.setHead(DataUtil.createTestListStringHead());
+        writer.write1(DataUtil.createTestListObject(), sheet3, table1);
 
         //写sheet2  模型上打有表头的注解
         Table table2 = new Table(2);
-        table2.setTableStyle(createTableStyle());
+        table2.setTableStyle(DataUtil.createTableStyle());
         table2.setClazz(WriteModel.class);
-        writer.write(createTestListJavaMode(), sheet3, table2);
+        writer.write(DataUtil.createTestListJavaMode(), sheet3, table2);
 
         writer.finish();
         out.close();
@@ -173,28 +174,28 @@ public class EasyExcelWriteTest2 {
         Map columnWidth = new HashMap();
         columnWidth.put(0,10000);columnWidth.put(1,40000);columnWidth.put(2,10000);columnWidth.put(3,10000);
         sheet1.setColumnWidthMap(columnWidth);
-        sheet1.setHead(createTestListStringHead());
+        sheet1.setHead(DataUtil.createTestListStringHead());
         //or 设置自适应宽度
         //sheet1.setAutoWidth(Boolean.TRUE);
-        writer.write1(createTestListObject(), sheet1);
+        writer.write1(DataUtil.createTestListObject(), sheet1);
 
         //写第二个sheet sheet2  模型上打有表头的注解，合并单元格
         Sheet sheet2 = new Sheet(2, 3, WriteModel.class, "第二个sheet", null);
-        sheet2.setTableStyle(createTableStyle());
-        writer.write(createTestListJavaMode(), sheet2);
+        sheet2.setTableStyle(DataUtil.createTableStyle());
+        writer.write(DataUtil.createTestListJavaMode(), sheet2);
 
         //写第三个sheet包含多个table情况
         Sheet sheet3 = new Sheet(3, 0);
         sheet3.setSheetName("第三个sheet");
         Table table1 = new Table(1);
-        table1.setHead(createTestListStringHead());
-        writer.write1(createTestListObject(), sheet3, table1);
+        table1.setHead(DataUtil.createTestListStringHead());
+        writer.write1(DataUtil.createTestListObject(), sheet3, table1);
 
         //写sheet2  模型上打有表头的注解
         Table table2 = new Table(2);
-        table2.setTableStyle(createTableStyle());
+        table2.setTableStyle(DataUtil.createTableStyle());
         table2.setClazz(WriteModel.class);
-        writer.write(createTestListJavaMode(), sheet3, table2);
+        writer.write(DataUtil.createTestListJavaMode(), sheet3, table2);
 
         writer.finish();
         out.close();
