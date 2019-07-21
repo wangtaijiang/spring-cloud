@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2019 SuperH, Inc. All Rights Reserved.
  */
-package com.cloud.clientservice.easyExcelTest;
+package com.cloud.clientservice.easyexceltest.test;
 
 import java.io.FileOutputStream;
 import java.io.OutputStream;
@@ -25,7 +25,7 @@ import com.cloud.pojo.entities.UserModel;
  * @authur wtj
  * @date 2019/6/15    23:01
  */
-public class EasyExeclTest {
+public class EasyExeclWriteTest {
 
     /**
      * 基于注解方式，比较简单常用的一种
