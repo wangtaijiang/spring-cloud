@@ -5,6 +5,7 @@ package com.cloud.pojo.entities;
 
 import com.alibaba.excel.metadata.BaseRowModel;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 /**
@@ -12,6 +13,7 @@ import lombok.Data;
  * @date 2019/6/15    23:26
  */
 @Data
+@AllArgsConstructor
 public class Student extends BaseRowModel {
 
     private Long id;
@@ -23,5 +25,7 @@ public class Student extends BaseRowModel {
     private String gender;
 
     private int group;
+
+
 
 }
