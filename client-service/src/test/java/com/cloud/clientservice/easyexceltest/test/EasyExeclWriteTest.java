@@ -34,7 +34,7 @@ public class EasyExeclWriteTest {
    @Test
     public void writeExcel1() throws Exception {
         // 文件输出位置
-        OutputStream out = new FileOutputStream("D:/easyexcel/test.xlsx");
+        OutputStream out = new FileOutputStream("D:/test.xlsx");
 
         ExcelWriter writer = EasyExcelFactory.getWriter(out);
 

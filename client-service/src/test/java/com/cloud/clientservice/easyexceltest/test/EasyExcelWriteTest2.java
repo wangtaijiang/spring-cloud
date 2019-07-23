@@ -9,6 +9,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.junit.Test;
 
@@ -29,7 +31,7 @@ import com.cloud.clientservice.easyexceltest.util.FileUtil;
 public class EasyExcelWriteTest2 {
     @Test
     public void writeV2007() throws IOException {
-        OutputStream out = new FileOutputStream("/Users/jipengfei/2007.xlsx");
+        OutputStream out = new FileOutputStream("d:/2007.xlsx");
         ExcelWriter writer = EasyExcelFactory.getWriter(out);
         //写第一个sheet, sheet1  数据全是List<String> 无模型映射关系
         Sheet sheet1 = new Sheet(1, 3);
@@ -157,6 +159,15 @@ public class EasyExcelWriteTest2 {
 
         writer.finish();
         out.close();
+        HashMap<String,String> map = new HashMap<>();
+        ConcurrentHashMap<String,String > concurrentHashMap = new ConcurrentHashMap<>();
+        map.put("","");
+        map.get("");
+        Set<Map.Entry<String, String>> entrySet = map.entrySet();
+        for (Map.Entry<String, String> entry : entrySet) {
+            entry.getKey();
+            entry.getValue();
+        }
 
     }
 
