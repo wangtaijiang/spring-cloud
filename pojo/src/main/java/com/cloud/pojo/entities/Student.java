@@ -7,12 +7,14 @@ import com.alibaba.excel.metadata.BaseRowModel;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @authur wtj
  * @date 2019/6/15    23:26
  */
 @Data
+@NoArgsConstructor
 @AllArgsConstructor
 public class Student extends BaseRowModel {
 
@@ -27,5 +29,8 @@ public class Student extends BaseRowModel {
     private int group;
 
 
+    public Student(int i){
+        this.age = i;
+    }
 
 }

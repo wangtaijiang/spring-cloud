@@ -5,10 +5,9 @@ package com.cloud.clientservice.lambda;
 
 /**
  * @authur wtj
- * @date 2019/7/23    21:22
+ * @date 2019/7/24    21:18
  */
 @FunctionalInterface
-public interface MyPredicate<T> {
-    public boolean filter(T t);
-
+public interface MyFunction {
+    public Integer getValue(Integer num);
 }
