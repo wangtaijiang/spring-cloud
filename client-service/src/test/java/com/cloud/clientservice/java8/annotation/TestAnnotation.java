@@ -3,7 +3,9 @@
  */
 package com.cloud.clientservice.java8.annotation;
 
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
+import java.util.Arrays;
 
 import org.junit.Test;
 
@@ -27,13 +29,18 @@ public class TestAnnotation
     @Test
     public void test1() throws NoSuchMethodException {
         Class<TestAnnotation> testAnnotationClass = TestAnnotation.class;
-        Method show = testAnnotationClass.getMethod("show");
-        MyAnnotation annotation = show.getAnnotation(MyAnnotation.class);
-        System.out.println(annotation);
+        Method[] methods = testAnnotationClass.getMethods();
+        for (Method method : methods) {
+            System.out.println(method);
+        }
+        Method show = testAnnotationClass.getMethod("show",String.class);
+
+        Annotation[] annotations = show.getAnnotations();
+        System.out.println(annotations.length);
+        Arrays.asList(annotations).stream().map(annotation -> 222).forEach(System.out::println);
 
         MyAnnotation[] declaredAnnotationsByType = show.getDeclaredAnnotationsByType(MyAnnotation.class);
-        System.out.println(declaredAnnotationsByType);
-        System.out.println(show.getAnnotationsByType(MyAnnotation.class));
+
         for (MyAnnotation myAnnotation : declaredAnnotationsByType) {
             System.out.println(myAnnotation.value());
         }
