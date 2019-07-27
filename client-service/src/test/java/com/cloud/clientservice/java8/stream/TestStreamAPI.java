@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2019 SuperH, Inc. All Rights Reserved.
  */
-package com.cloud.clientservice.stream;
+package com.cloud.clientservice.java8.stream;
 
 import java.util.ArrayList;
 import java.util.Arrays;

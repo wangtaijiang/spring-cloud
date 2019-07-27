@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2019 SuperH, Inc. All Rights Reserved.
  */
-package com.cloud.clientservice.lambda;
+package com.cloud.clientservice.java8.lambda;
 
 import java.util.Comparator;
 import java.util.HashMap;
